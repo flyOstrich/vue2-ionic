@@ -9,23 +9,17 @@ Vue.component('ion-tabs', {
     methods: {},
 
     created: function () {
-        // console.log(this.$children.length)
-        // console.log(this.$slots)
+        console.log('tabs create')
     },
     beforeMount: function () {
-        console.log(this.$children.length)
-        console.log(this.$slots)
+
     },
     mounted: function () {
-        console.log(this.$slots)
+
+        console.log('tabs mounted!');
     },
     render: function (h) {
-        // return <div :class="'tabs-icon-top tabs-'+tabPosition+' tabs-'+tabStyle">
-        //             <div class="tab-nav tabs">
-        //                <slot></slot>
-        //             </div>
-        //        </div>
-        console.log(this.$slots)
+        console.log('tabs render')
         return (
             <div class="tabs-positive tabs-icon-top tabs-standard">
                 <div class="tab-nav tabs">

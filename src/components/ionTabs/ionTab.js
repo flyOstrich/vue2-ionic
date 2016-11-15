@@ -14,12 +14,13 @@ Vue.component('ion-tab', {
         }
     },
     created: function () {
+        console.log('tab create')
         if (this.$parent.$children.length == 1) {
             this.active = true;
         }
     },
     mounted: function () {
-
+        console.log('tab mounted')
     },
     methods: {
         selectTab: function () {

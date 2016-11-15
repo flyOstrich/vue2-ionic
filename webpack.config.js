@@ -12,10 +12,11 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel', // 'babel-loader' is also a valid name to reference
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015'],
+                    plugins: ["transform-vue-jsx"]
                 }
             }
         ],
-        devtool:'#inline-srouce-map'
+        devtool: '#inline-srouce-map'
     }
 }

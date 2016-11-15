@@ -1,6 +1,5 @@
 import tabMixin from './tabMixin';
 Vue.component('ion-tab', {
-    mixins:[tabMixin],
     props: {
         title: String,
         icon: String,
@@ -9,10 +8,28 @@ Vue.component('ion-tab', {
         badge: String,
         badgeStyle: String
     },
-    created:function () {
-        debugger;
+    data: function () {
+        return {
+            active: false
+        }
     },
-    template: `<a  class="tab-item">
+    created: function () {
+        if (this.$parent.$children.length == 1) {
+            this.active = true;
+        }
+    },
+    mounted: function () {
+
+    },
+    methods: {
+        selectTab: function () {
+            this.$parent.$children.forEach((cmp)=> {
+                cmp.active = false;
+            });
+            this.active = true;
+        }
+    },
+    template: `<a @click="selectTab()"  :class="active?'tab-item tab-item-active':'tab-item'">
                       <i :class="'icon '+icon" v-if="icon"></i>
                       <span class="tab-title">{{title}}</span>
                </a>`

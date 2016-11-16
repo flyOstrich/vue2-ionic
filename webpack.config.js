@@ -8,13 +8,14 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.vue$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'vue'
+            },
+            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel', // 'babel-loader' is also a valid name to reference
-                query: {
-                    presets: ['es2015'],
-                    plugins: ["transform-vue-jsx"]
-                }
+                loader: 'babel' // 'babel-loader' is also a valid name to reference
             }
         ],
         devtool: '#inline-srouce-map'

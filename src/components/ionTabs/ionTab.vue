@@ -1,12 +1,19 @@
-import tabMixin from './tabMixin';
-Vue.component('ion-tab', {
+<template>
+    <a @click="selectTab()" :class="active?'tab-item tab-item-active':'tab-item'">
+        <i :class="'icon '+icon" v-if="icon"></i>
+        <span class="tab-title">{{title}}</span>
+    </a>
+</template>
+<script>
+export default {
     props: {
         title: String,
         icon: String,
         iconOn: String,
         iconOff: String,
         badge: String,
-        badgeStyle: String
+        badgeStyle: String,
+        tabId:String
     },
     data: function () {
         return {
@@ -30,8 +37,8 @@ Vue.component('ion-tab', {
             this.active = true;
         }
     },
-    template: `<a @click="selectTab()"  :class="active?'tab-item tab-item-active':'tab-item'">
-                      <i :class="'icon '+icon" v-if="icon"></i>
-                      <span class="tab-title">{{title}}</span>
-               </a>`
-});
+}
+
+
+
+</script>

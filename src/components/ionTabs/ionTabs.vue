@@ -17,14 +17,16 @@ export  default{
            activeTabId:null
         }
     },
-    created: function () {
+    created () {
         console.log('tabs create')
     },
-    beforeMount: function () {
+    beforeMount () {
 
     },
-    mounted: function () {
-        console.log('tabs mounted!');
+    mounted () {
+        if(this.$children.length){
+            debugger;
+        }
     }
 }
 

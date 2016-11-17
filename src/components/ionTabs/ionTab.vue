@@ -17,6 +17,7 @@ export default {
     },
     computed:{
        active:function(){
+          if(!this.$parent.activeTabId)this.$parent.activeTabId=this.tabId;
           return this.$parent.activeTabId==this.tabId;
        }
     },
@@ -30,7 +31,7 @@ export default {
         console.log('tab mounted')
     },
     methods: {
-        selectTab: function () {
+        selectTab () {
             this.$parent.activeTabId=this.tabId;
         }
     },

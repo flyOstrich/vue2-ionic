@@ -1,5 +1,5 @@
 <template>
-    <span class="pane tab-content" nav-view="active">AAAAAAAAAAAAAAAAAA</span>
+    <span class="pane tab-content" :nav-view="active?'active':'cached'"><slot></slot></span>
 </template>
 
 <script>
@@ -13,11 +13,12 @@
            }
         },
         computed:{
-            active:function(){
+            active(){
+                return this.$parent.activeTabId==this.for;
             }
         },
         created(){
-           alert(this.for)
+//           alert(this.for)
         }
     }
 

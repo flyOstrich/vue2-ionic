@@ -15,10 +15,10 @@ export default {
         badgeStyle: String,
         tabId:String
     },
-    data: function () {
-        return {
-            active: false
-        }
+    computed:{
+       active:function(){
+          return this.$parent.activeTabId==this.tabId;
+       }
     },
     created: function () {
         console.log('tab create')
@@ -31,13 +31,12 @@ export default {
     },
     methods: {
         selectTab: function () {
-            this.$parent.$children.forEach((cmp)=> {
-                cmp.active = false;
-            });
-            this.active = true;
+            this.$parent.activeTabId=this.tabId;
         }
     },
 }
+
+
 
 
 

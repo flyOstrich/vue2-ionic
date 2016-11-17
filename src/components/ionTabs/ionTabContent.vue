@@ -5,7 +5,23 @@
 <script>
     export default{
         props:{
-           tabId:String
+           for:String
+        },
+        data(){
+           return {
+               active:false
+           }
+        },
+        computed:{
+            active:function(){
+            }
+        },
+        created(){
+           alert(this.for)
         }
     }
+
+
+
+
 </script>

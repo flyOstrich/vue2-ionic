@@ -1,8 +1,9 @@
 <template>
     <div class="tabs-positive tabs-icon-top tabs-standard">
         <div class="tab-nav tabs">
-            <slot></slot>
+            <slot name="tab-nav"></slot>
         </div>
+        <slot name="nav-view"></slot>
     </div>
 </template>
 <script>
@@ -11,23 +12,23 @@ export  default{
         tabPosition: String,
         tabStyle: String
     },
-    data: function () {
-        return {}
+    data(){
+        return {
+           activeTabId:null
+        }
     },
-    methods: {},
-
     created: function () {
         console.log('tabs create')
     },
     beforeMount: function () {
-        console.log('before mount')
-        let slots = this.$slots.default;
-        slots.forEach((slot)=> {
 
-        });
     },
     mounted: function () {
         console.log('tabs mounted!');
     }
 }
+
+
+
+
 </script>

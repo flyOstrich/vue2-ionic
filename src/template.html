@@ -1,0 +1,18 @@
+<ion-tabs tab-position="bottom" tab-style="positive">
+    <template slot="tab-nav">
+        <ion-tab tab-id="study" title="学习" icon="ion-ios-filing-outline"></ion-tab>
+        <ion-tab tab-id="more" title="更多" icon="ion-ios-filing-outline"></ion-tab>
+        <ion-tab tab-id="me" title="我" icon="ion-ios-filing-outline"></ion-tab>
+    </template>
+    <template slot="nav-view">
+        <ion-tab-content for="study">
+            <router-view></router-view>
+        </ion-tab-content>
+        <ion-tab-content for="more">
+            <router-view></router-view>
+        </ion-tab-content>
+        <ion-tab-content for="me">
+            <router-view></router-view>
+        </ion-tab-content>
+    </template>
+</ion-tabs>

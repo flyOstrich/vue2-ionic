@@ -16,6 +16,11 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel' // 'babel-loader' is also a valid name to reference
+            },
+            {
+                test: /\.html$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'raw' // 'babel-loader' is also a valid name to reference
             }
         ],
         devtool: '#inline-srouce-map'

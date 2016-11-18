@@ -33,6 +33,7 @@ export default {
     methods: {
         selectTab () {
             this.$parent.activeTabId=this.tabId;
+            this.$router.push({path:"/main/posts"})
         }
     },
 }
